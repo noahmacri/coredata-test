@@ -11,6 +11,8 @@
 		8F18A1851DA63D8B00AAC2CF /* Incident+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F18A1831DA63D8B00AAC2CF /* Incident+CoreDataProperties.swift */; };
 		8F1FFFA31DA5299100BA0F0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1FFFA21DA5299100BA0F0F /* AppDelegate.swift */; };
 		8F324A011DAE02F90013B1A8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F324A001DAE02F90013B1A8 /* TableViewController.swift */; };
+		8F4BE3071DB3838E0082B8E0 /* Tags+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BE3051DB3838E0082B8E0 /* Tags+CoreDataClass.swift */; };
+		8F4BE3081DB3838E0082B8E0 /* Tags+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BE3061DB3838E0082B8E0 /* Tags+CoreDataProperties.swift */; };
 		8FC163EE1DA50B4D00C2F43C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC163ED1DA50B4D00C2F43C /* ViewController.swift */; };
 		8FC163F11DA50B4D00C2F43C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FC163EF1DA50B4D00C2F43C /* Main.storyboard */; };
 		8FC163F41DA50B4D00C2F43C /* projectsafe_coredata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FC163F21DA50B4D00C2F43C /* projectsafe_coredata.xcdatamodeld */; };
@@ -25,6 +27,8 @@
 		8F18A1831DA63D8B00AAC2CF /* Incident+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Incident+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8F1FFFA21DA5299100BA0F0F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F324A001DAE02F90013B1A8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		8F4BE3051DB3838E0082B8E0 /* Tags+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tags+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F4BE3061DB3838E0082B8E0 /* Tags+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tags+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8FC163E81DA50B4D00C2F43C /* projectsafe-coredata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "projectsafe-coredata.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FC163ED1DA50B4D00C2F43C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8FC163F01DA50B4D00C2F43C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		8FC163DF1DA50B4D00C2F43C = {
 			isa = PBXGroup;
 			children = (
+				8F4BE3051DB3838E0082B8E0 /* Tags+CoreDataClass.swift */,
+				8F4BE3061DB3838E0082B8E0 /* Tags+CoreDataProperties.swift */,
 				8F18A1821DA63D8B00AAC2CF /* Incident+CoreDataClass.swift */,
 				8F18A1831DA63D8B00AAC2CF /* Incident+CoreDataProperties.swift */,
 				8FFB5F451DB327000095E29E /* CSwiftV.h */,
@@ -157,12 +163,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F1FFFA31DA5299100BA0F0F /* AppDelegate.swift in Sources */,
+				8F4BE3071DB3838E0082B8E0 /* Tags+CoreDataClass.swift in Sources */,
 				8F324A011DAE02F90013B1A8 /* TableViewController.swift in Sources */,
 				8FC163F41DA50B4D00C2F43C /* projectsafe_coredata.xcdatamodeld in Sources */,
 				8FC163EE1DA50B4D00C2F43C /* ViewController.swift in Sources */,
 				8F18A1851DA63D8B00AAC2CF /* Incident+CoreDataProperties.swift in Sources */,
 				8FC164051DA50D5100C2F43C /* ProjectSafeDatabase.swift in Sources */,
 				8FFB5F471DB327010095E29E /* CSwiftV.swift in Sources */,
+				8F4BE3081DB3838E0082B8E0 /* Tags+CoreDataProperties.swift in Sources */,
 				8F18A1841DA63D8B00AAC2CF /* Incident+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

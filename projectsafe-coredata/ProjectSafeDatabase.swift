@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 import UIKit
-import CSwiftV
 
 public class ProjectSafeDatabase: UITableViewController, NSFetchedResultsControllerDelegate
 {
@@ -74,26 +73,30 @@ public class ProjectSafeDatabase: UITableViewController, NSFetchedResultsControl
         incident.year = row["Year"]
         incident.location = row["Location"]
         
-        var consequences = [String]()
+        //var consequences = [String]()
         
         // Bad way to load things in
         for i in 1...3
         {
             if row["Consequence\(i)"] != nil
             {
-                consequences.append(row["Consequence\(i)"]!)
+                //consequences.append(row["Consequence\(i)"]!)
+                let tag = Tags(context: self.container.viewContext)
+                tag.name = row["Consequence\(i)"]
+                incident.addToTags(tag)
             }
         }
+        print(incident.tags?.count)
         
-        incident.hazards = consequences
+        //incident.hazards = consequences
     }
     
-    // Wipe incidents in database
+    // Wipe incidents + tags in database
     func wipeSavedData()
     {
-        let request = Incident.createFetchRequest()
+        let incidents = Incident.createFetchRequest()
 
-        if let records = try? container.viewContext.fetch(request)
+        if let records = try? container.viewContext.fetch(incidents)
         {
             for record in records
             {
@@ -101,6 +104,15 @@ public class ProjectSafeDatabase: UITableViewController, NSFetchedResultsControl
             }
         }
         
+        let tags = Tags.createFetchRequest()
+        
+        if let records = try? container.viewContext.fetch(tags)
+        {
+            for record in records
+            {
+                container.viewContext.delete(record)
+            }
+        }
         self.saveContext()// ??
     }
     
@@ -115,7 +127,7 @@ public class ProjectSafeDatabase: UITableViewController, NSFetchedResultsControl
         do
         {
             let records = try container.viewContext.fetch(request)
-            print("Records in db: \(records.count)")
+            print("Records in db in db: \(records.count)")
             for record in records
             {
                 print(record.toString())
@@ -134,6 +146,8 @@ public class ProjectSafeDatabase: UITableViewController, NSFetchedResultsControl
         let sort = NSSortDescriptor(key: "id", ascending: false)
         request.sortDescriptors = [sort]
         request.fetchBatchSize = 20
+        
+        request.predicate = NSPredicate(format: "tags.name CONTAINS[cd] %@", "Noise/Chemical/Biological/Radiation")
         
         // sectionNameKeyPath is the variable that denotes the sections in tables.
         // e.g. If it is Year, it groups results by 2013, 2014... etc.
@@ -254,11 +268,14 @@ public class ProjectSafeDatabase: UITableViewController, NSFetchedResultsControl
     // Display table information
     func tableTest()
     {
-        print(fetchedResultsController.sections?.count ?? 0)
-        for i in 0..<(fetchedResultsController.sections?.count ?? 0)
+        if (fetchedResultsController != nil)
         {
-            print(fetchedResultsController.sections![i].name)
-            print(fetchedResultsController.sections![i].numberOfObjects)
+            print(fetchedResultsController.sections?.count ?? 0)
+            for i in 0..<(fetchedResultsController.sections?.count ?? 0)
+            {
+                print(fetchedResultsController.sections![i].name)
+                print(fetchedResultsController.sections![i].numberOfObjects)
+            }
         }
     }
         

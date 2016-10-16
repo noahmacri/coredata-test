@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     @IBAction func listDistinct(_ sender: AnyObject) {
         print("Listing distinct values")
-        database.testAllOptions(headers: ["activity","severity","year","location","hazards"])
+        database.testAllOptions(headers: ["activity","severity","year","location"])
     }
     @IBAction func tableTest(_ sender: AnyObject) {
         print("Table Test")
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        database.loadForTable()
+        //database.loadForTable()
     }
 
     override func didReceiveMemoryWarning() {

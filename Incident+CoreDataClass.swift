@@ -13,6 +13,6 @@ import CoreData
 public class Incident: NSManagedObject {
     func toString() -> String
     {
-        return "ID: \(self.id!), Title: \(self.title!), Activity: \(self.activity!), Severity: \(self.severity!), Year: \(self.year!), Location: \(self.location!), Hazards: \(self.hazards)"
+        return "ID: \(self.id!), Title: \(self.title!), Activity: \(self.activity!), Severity: \(self.severity!), Year: \(self.year!), Location: \(self.location!), Hazards: TODO"
     }
 }

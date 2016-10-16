@@ -1,13 +1,12 @@
 import Foundation
 import CoreData
 import UIKit
-import CSwiftV
 
 public class TableViewController: UITableViewController, NSFetchedResultsControllerDelegate
 {
     //var container: NSPersistentContainer!
     let container = AppDelegate().persistentContainer
-    let headers = ["activity","severity","year","location","hazards"]
+    let headers = ["activity","severity","year","location"]
     
     var fetchedResultsController: NSFetchedResultsController<Incident>!
     var predicate: NSPredicate?

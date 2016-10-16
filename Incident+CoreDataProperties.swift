@@ -8,11 +8,10 @@
 
 import Foundation
 import CoreData
-import 
 
 extension Incident {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Incident> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Incident> {
         return NSFetchRequest<Incident>(entityName: "Incident");
     }
 

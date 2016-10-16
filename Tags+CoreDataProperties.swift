@@ -12,7 +12,7 @@ import CoreData
 
 extension Tags {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Tags> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Tags> {
         return NSFetchRequest<Tags>(entityName: "Tags");
     }
 

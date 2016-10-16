@@ -2,15 +2,18 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Incident" representedClassName=".Incident" syncable="YES">
         <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="hazards" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="headers" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="severity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tags" syncable="YES"/>
+    </entity>
+    <entity name="Tags" representedClassName=".Tags" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Incident" positionX="-342" positionY="114" width="128" height="165"/>
+        <element name="Incident" positionX="-596" positionY="50" width="128" height="148"/>
+        <element name="Tags" positionX="-342" positionY="162" width="128" height="58"/>
     </elements>
 </model>
